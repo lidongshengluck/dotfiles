@@ -4,6 +4,7 @@
 
 ## 目录介绍
 ---
+```
 ├── envron_check.sh
 ├── install.sh 安装脚本
 ├── oh-my-zsh zsh的快速配置
@@ -18,6 +19,7 @@
 ├── zsh zsh命令高级提示
 │   └── zsh-autosuggestions
 └── zshrc zsh自定义配置
+```
 
 ## 环境
 ---
