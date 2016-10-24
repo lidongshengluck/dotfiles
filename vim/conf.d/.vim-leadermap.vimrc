@@ -24,8 +24,14 @@ inoremap <leader>u <esc>hviwUwi
 
 " edit模式下，快速保存文件
 inoremap <leader>w <esc>:w<cr>a
-inoremap <leader>q <esc>:wq<cr>
 
+" 打开配置文件
+nnoremap <leader>ev :split ~/.vimrc<CR>
+
+" 打开帮助文件
+nnoremap <leader>eh :split ~/.vim/mydoc/index/doc/README.txt<CR>
+
+" 目录导航
 nnoremap <leader>n :NERDTreeToggle<CR>
 
 " 项目中查询字符串
