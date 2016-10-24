@@ -38,13 +38,12 @@ Plugin 'majutsushi/tagbar'
 
 
 " 代码补全php补全
-"Bundle 'shawncplus/phpcomplete.vim'
-"Bundle 'm2mdas/phpcomplete-extended'
+Bundle 'shawncplus/phpcomplete.vim'
+Bundle 'm2mdas/phpcomplete-extended'
 
 " 代码补全laravel支持
-"Bundle 'm2mdas/phpcomplete-extended-laravel'
+Bundle 'm2mdas/phpcomplete-extended-laravel'
 
-" master slave
 " 快速移动
 Bundle 'easymotion/vim-easymotion'
 
