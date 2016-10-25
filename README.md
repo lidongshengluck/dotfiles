@@ -27,6 +27,7 @@
 * zsh 全新的shell运行环境
 * tmux 复合终端
 * autojump, autojump-zsh 目录自动跳转和zsh插件支持
+* vimproc
 
 ## 安装
 ---
