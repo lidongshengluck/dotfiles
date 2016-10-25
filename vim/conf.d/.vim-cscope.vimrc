@@ -1,24 +1,43 @@
-" cscope setting -----------------------------------{{{
+"
+if has("cscope")
+    set cscopequickfix=s+,c+,d+,i+,t+,e+,g+
+	set csto=0
+	set cst
+	set nocsverb
+	if filereadable("cscope.out")
+		cs add cscope.out
+	endif
+	set csverb
+endif
 
-nnoremap <leader>fa :call cscope#findInteractive(expand('<cword>'))<CR>
-nnoremap <leader>l :call ToggleLocationList()<CR>
+if !exists('g:cwn')
+    let g:cwn = 0
+endif
 
-" s: Find this C symbol
-nnoremap  <leader>fs :call cscope#find('s', expand('<cword>'))<CR>
-" g: Find this definition
-nnoremap  <leader>fg :call cscope#find('g', expand('<cword>'))<CR>
-" d: Find functions called by this function
-nnoremap  <leader>fd :call cscope#find('d', expand('<cword>'))<CR>
-" c: Find functions calling this function
-nnoremap  <leader>fc :call cscope#find('c', expand('<cword>'))<CR>
-" t: Find this text string
-nnoremap  <leader>ft :call cscope#find('t', expand('<cword>'))<CR>
-" e: Find this egrep pattern
-nnoremap  <leader>fe :call cscope#find('e', expand('<cword>'))<CR>
-" f: Find this file
-nnoremap  <leader>ff :call cscope#find('f', expand('<cword>'))<CR>
-" i: Find files #including this file
-nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR>
+function! SetCwIdx()
+    if g:cwn > 0 
+        :ccl
+        let g:cwn = 0
+    else
+        :cw
+        let g:cwn = winnr()
+    endif
+endfunction
 
-" cscope setting end --------}}}
+"" s: Find this C symbol
+nnoremap  <leader>fs :cs f c ('<cword>')<CR>:call SetCwIdx()<CR>
+"" g: Find this definition
+nnoremap  <leader>fg :cs f g <cword><CR>:call SetCwIdx()<CR>
+"" d: Find functions called by this function
+nnoremap  <leader>fd :cs f d <cword><CR>:call SetCwIdx()<CR>
+"" c: Find functions calling this function
+nnoremap  <leader>fc :cs f c <cword><CR>:call SetCwIdx()<CR>
+"" t: Find this text string
+nnoremap  <leader>ft :cs f t <cword><CR>:call SetCwIdx()<CR>
+"" e: Find this egrep pattern
+nnoremap  <leader>fe :cs e e <cword><CR>:call SetCwIdx()<CR>
+"" f: Find this file
+nnoremap  <leader>ff :cs f f <cword><CR>:call SetCwIdx()<CR>
+"" i: Find files #including this file
 
+nnoremap <leader>l :call SetCwIdx()<CR>

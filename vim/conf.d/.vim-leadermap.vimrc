@@ -1,9 +1,8 @@
-
 " 行首尾移动键定义 ---------------------{{{
 nnoremap <leader>h ^
-nnoremap <leader>l $
+nnoremap <leader>g g_
 vnoremap <leader>h ^
-vnoremap <leader>l $
+vnoremap <leader>g g_
 " end -----------}}}
 
 " 多窗口编辑模式下，窗口快速跳转 -------------------{{{
@@ -29,10 +28,8 @@ inoremap <leader>w <esc>:w<cr>a
 nnoremap <leader>ev :split ~/.vimrc<CR>
 
 " 打开帮助文件
-nnoremap <leader>eh :split ~/.vim/mydoc/index/doc/README.txt<CR>
+nnoremap <leader>eh :split ~/.vim/mydoc/index/doc/README.md<CR>
 
 " 目录导航
 nnoremap <leader>n :NERDTreeToggle<CR>
 
-" 项目中查询字符串
-nnoremap <leader>/ :Ack * -w

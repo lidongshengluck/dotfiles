@@ -1,2 +1,3 @@
-nnoremap <leader>a= :Tabularize /=<CR>
-nnoremap <leader>a, :Tabularize /,<CR>
+nnoremap <leader>/=  :Tabularize /=<CR>
+nnoremap <leader>/,  :Tabularize /,<CR>
+nnoremap <leader>/== :Tabularize /==<CR>

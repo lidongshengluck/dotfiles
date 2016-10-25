@@ -5,6 +5,7 @@ set nu
 set ar
 set autoindent
 set incsearch
+set backspace=indent,eol,start
 "set ruler
 "set cursorline
 
@@ -80,8 +81,10 @@ source ~/.vim/conf.d/.vim-syntastic.vimrc
 source ~/.vim/conf.d/.vim-easymotion.vimrc
 source ~/.vim/conf.d/.vim-neocomplete.vimrc
 source ~/.vim/conf.d/.vim-leadermap.vimrc
-source ~/.vim/script/cscope.vim
 source ~/.vim/conf.d/.vim-cscope.vimrc
+source ~/.vim/conf.d/.vim-mutliple-cursors.vimrc
+source ~/.vim/conf.d/.vim-shell.vimrc
+source ~/.vim/conf.d/.vim-ag.vimrc
 
 let g:phpcomplete_index_composer_command="composer"
 

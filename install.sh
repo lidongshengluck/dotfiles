@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 curr_path=`pwd`
+[ -z "$VUNDLE_URI" ] && VUNDLE_URI="https://github.com/VundleVim/Vundle.vim.git"
+[ -z "$REPO_URI" ] && REPO_URI='https://github.com/lidongshengluck/vim.git'
 
 # 显示一条消息
 msg() {
@@ -86,8 +88,8 @@ fi
 create_symlinks "$curr_path" \
                 "$HOME"
 
-#install_vundle  "$VUNDLE_URI" \
-                #"$HOME"
+install_vundle  "$VUNDLE_URI" \
+                "$HOME"
 
-#install_vundle_plugins  "$HOME/.vimrc.bundles"
+install_vundle_plugins  "$HOME/.vimrc.bundles"
 

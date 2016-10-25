@@ -23,7 +23,8 @@ Plugin 'thisivan/vim-bufexplorer'
 Plugin 'scrooloose/nerdcommenter'
 
 " 代码补全
-Plugin 'Shougo/neocomplete'
+Bundle 'Shougo/vimproc'
+"Plugin 'Shougo/neocomplete'
 
 " 代码补全增强
 Plugin 'ervandew/supertab'
@@ -34,8 +35,6 @@ Plugin 'Shougo/neosnippet-snippets'
 
 " 代码函数列表
 Plugin 'majutsushi/tagbar'
-" install
-
 
 " 代码补全php补全
 Bundle 'shawncplus/phpcomplete.vim'
@@ -72,9 +71,8 @@ Bundle 'kshenoy/vim-signature'
 "Bundle 'mileszs/ack.vim'
 
 " 自动更新tag
-Bundle 'vim-scripts/cscope.vim'
+"Bundle 'brookhong/cscope.vim'
 
-Bundle 'Shougo/vimproc'
 Bundle 'Shougo/vimshell.vim'
 
 Bundle 'rking/ag.vim'
