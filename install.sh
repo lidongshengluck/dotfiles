@@ -35,13 +35,14 @@ create_symlinks() {
     local source_path="$1"
     local target_path="$2"
 
-    ln -s "$source_path/vim"           "$target_path/.vim"
-    ln -s "$source_path/vimrc"         "$target_path/.vimrc"
-    ln -s "$source_path/vimrc.bundles" "$target_path/.vimrc.bundles"
-    ln -s "$source_path/zsh"           "$target_path/.zsh"
-    ln -s "$source_path/oh-my-zsh"     "$target_path/.oh-my-zsh"
-    ln -s "$source_path/zshrc"         "$target_path/.zshrc"
-    ln -s "$source_path/tmux.conf"     "$target_path/.tmux.conf"
+    ln -s "$source_path/vim"             "$target_path/.vim"
+    ln -s "$source_path/vimrc"           "$target_path/.vimrc"
+    ln -s "$source_path/vimrc.bundles"   "$target_path/.vimrc.bundles"
+    ln -s "$source_path/zsh"             "$target_path/.zsh"
+    ln -s "$source_path/oh-my-zsh"       "$target_path/.oh-my-zsh"
+    ln -s "$source_path/zshrc"           "$target_path/.zshrc"
+    ln -s "$source_path/user_default.sh" "$target_path/.user_default.sh"
+    ln -s "$source_path/tmux.conf"       "$target_path/.tmux.conf"
 
     success "创建链接成功"
 }
