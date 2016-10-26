@@ -123,16 +123,27 @@ else
     exit
 fi
 
+# 复制常用配置文件
 copy_files
+
+# 安装 zsh 插件
 install_zsh
 
 # 安装 autojump 插件
 # ./install_autojump.sh
 
+# 创建链接
 create_symlinks "$dotfiles" \
                 "$HOME"
 
+# 安装vim插件管理包
 install_vundle  "$VUNDLE_URI" \
                 "$HOME"
 
+# 安装vim插件
 install_vundle_plugins
+
+# 修改默认环境为 zsh， 编译 vimproc
+cd ~/.vim/bundle/vimproc
+make
+chsh -s /bin/zsh
