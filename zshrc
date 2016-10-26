@@ -59,6 +59,8 @@ plugins=(git, autojump)
 
 source $ZSH/oh-my-zsh.sh
 
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -88,6 +90,7 @@ alias cls='clear'
 alias ll='ls -l'
 alias la='ls -a'
 alias vi='vim'
+alias phpdbg='/usr/local/php5/bin/phpdbg'
 alias grep="grep --color=auto"
 alias -s php=vi
 alias -s js=vi
@@ -99,7 +102,7 @@ alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
 
 # load autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-source ~/.user_default.sh
+source $HOME/.user_default.sh
 
