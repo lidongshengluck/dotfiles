@@ -1,4 +1,5 @@
 # Path to your oh-my-zsh installation.
+PATH=~/.autojump/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.

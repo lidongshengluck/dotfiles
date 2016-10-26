@@ -37,12 +37,12 @@ initialization() {
     rm -rf $HOME/.zshrc
     rm -rf $HOME/.user_default.sh
     rm -rf $HOME/.tmux.conf
-    rm -rf $dotfiles
+    #rm -rf $dotfiles
     
-    success "创建目录"
-    mkdir -p "$dotfiles/vim_conf"
-    mkdir -p "$dotfiles/tmux_conf"
-    mkdir -p "$dotfiles/zsh_conf"
+    #success "创建目录"
+    #mkdir -p "$dotfiles/vim_conf"
+    #mkdir -p "$dotfiles/tmux_conf"
+    #mkdir -p "$dotfiles/zsh_conf"
 
     return 1
 }
@@ -61,7 +61,7 @@ install_zsh() {
     git clone $OH_MY_ZSH "${dotfiles}/zsh_conf/oh-my-zsh"
 
     # autojump.zsh
-    git clone $AUTO_JUMP "${dotfiles}/zsh_conf/autojump"
+    # git clone $AUTO_JUMP "${dotfiles}/zsh_conf/autojump"
 
     # zsh-autosuggestions zsh的shell自动补全插件安装
     git clone $ZSH_AUTO "${dotfiles}/zsh_conf/zsh/zsh-autosuggestions"
@@ -131,6 +131,6 @@ install_zsh
 create_symlinks "$dotfiles" \
                 "$HOME"
 
-install_vundle  "$VUNDLE_URI" \
-                "$HOME"
+#install_vundle  "$VUNDLE_URI" \
+#                "$HOME"
 
