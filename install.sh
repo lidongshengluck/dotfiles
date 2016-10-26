@@ -1,8 +1,19 @@
 #!/usr/bin/env bash
 
 curr_path=`pwd`
+dotfiles=$HOME/.dotfiles
+
+# vim 包管理插件
 [ -z "$VUNDLE_URI" ] && VUNDLE_URI="https://github.com/VundleVim/Vundle.vim.git"
-[ -z "$REPO_URI" ] && REPO_URI='https://github.com/lidongshengluck/vim.git'
+
+# oh_my_zsh zsh的增强配置
+[ -z "$OH_MY_ZSH" ] && OH_MY_ZSH='git://github.com/robbyrussell/oh-my-zsh.git'
+
+# zsh 的自动跳转插件
+[ -z "$AUTO_JUMP" ] && AUTO_JUMP='git://github.com/joelthelion/autojump.git'
+
+# zsh 自动补全
+[ -z "$ZSH_AUTO" ] && ZSH_AUTO='git://github.com/joelthelion/autojump.git'
 
 # 显示一条消息
 msg() {
@@ -21,13 +32,39 @@ source "${curr_path}/envron_check.sh"
 initialization() {
     rm -rf $HOME/.vim
     rm -rf $HOME/.vimrc
-    rm -rf $HOME/.vimrc.bundles
     rm -rf $HOME/.oh-my-zsh
     rm -rf $HOME/.zsh
     rm -rf $HOME/.zshrc
+    rm -rf $HOME/.user_default.sh
     rm -rf $HOME/.tmux.conf
+    rm -rf $dotfiles
+    
+    success "创建目录"
+    mkdir -p "$dotfiles/vim_conf"
+    mkdir -p "$dotfiles/tmux_conf"
+    mkdir -p "$dotfiles/zsh_conf"
 
     return 1
+}
+
+# 复制文件
+copy_files() {
+    cp $curr_path/vim       $dotfiles/vim_conf/vim -rf
+    cp $curr_path/vimrc     $dotfiles/vim_conf/vimrc -rf
+    cp $curr_path/tmux.conf $dotfiles/tmux_conf/tmux.conf -rf
+    cp $curr_path/zshrc     $dotfiles/zsh_conf/zshrc -rf
+}
+
+# 安装 zsh 配置
+install_zsh() {
+    # oh_my_zsh
+    git clone $OH_MY_ZSH "${dotfiles}/zsh_conf/oh-my-zsh"
+
+    # autojump.zsh
+    git clone $AUTO_JUMP "${dotfiles}/zsh_conf/autojump"
+
+    # zsh-autosuggestions zsh的shell自动补全插件安装
+    git clone $ZSH_AUTO "${dotfiles}/zsh_conf/zsh/zsh-autosuggestions"
 }
 
 # 创建链接文件
@@ -35,14 +72,13 @@ create_symlinks() {
     local source_path="$1"
     local target_path="$2"
 
-    ln -s "$source_path/vim"             "$target_path/.vim"
-    ln -s "$source_path/vimrc"           "$target_path/.vimrc"
-    ln -s "$source_path/vimrc.bundles"   "$target_path/.vimrc.bundles"
-    ln -s "$source_path/zsh"             "$target_path/.zsh"
-    ln -s "$source_path/oh-my-zsh"       "$target_path/.oh-my-zsh"
-    ln -s "$source_path/zshrc"           "$target_path/.zshrc"
-    ln -s "$source_path/user_default.sh" "$target_path/.user_default.sh"
-    ln -s "$source_path/tmux.conf"       "$target_path/.tmux.conf"
+    ln -s "$source_path/vim_conf/vim"             "$target_path/.vim"
+    ln -s "$source_path/vim_conf/vimrc"           "$target_path/.vimrc"
+    ln -s "$source_path/zsh_conf/zsh"             "$target_path/.zsh"
+    ln -s "$source_path/zsh_conf/oh-my-zsh"       "$target_path/.oh-my-zsh"
+    ln -s "$source_path/zsh_conf/zshrc"           "$target_path/.zshrc"
+    ln -s "$source_path/zsh_conf/user_default.sh" "$target_path/.user_default.sh"
+    ln -s "$source_path/tmux_conf/tmux.conf"      "$target_path/.tmux.conf"
 
     success "创建链接成功"
 }
@@ -86,11 +122,15 @@ else
     exit
 fi
 
-create_symlinks "$curr_path" \
+copy_files
+install_zsh
+
+# 安装 autojump 插件
+# ./install_autojump.sh
+
+create_symlinks "$dotfiles" \
                 "$HOME"
 
 install_vundle  "$VUNDLE_URI" \
                 "$HOME"
-
-install_vundle_plugins  "$HOME/.vimrc.bundles"
 
