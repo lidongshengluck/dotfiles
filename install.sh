@@ -135,3 +135,4 @@ create_symlinks "$dotfiles" \
 install_vundle  "$VUNDLE_URI" \
                 "$HOME"
 
+install_vundle_plugins
