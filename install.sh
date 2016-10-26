@@ -49,10 +49,11 @@ initialization() {
 
 # 复制文件
 copy_files() {
-    cp $curr_path/vim       $dotfiles/vim_conf/vim -rf
-    cp $curr_path/vimrc     $dotfiles/vim_conf/vimrc -rf
-    cp $curr_path/tmux.conf $dotfiles/tmux_conf/tmux.conf -rf
-    cp $curr_path/zshrc     $dotfiles/zsh_conf/zshrc -rf
+    cp $curr_path/vim              $dotfiles/vim_conf/vim -rf
+    cp $curr_path/vimrc            $dotfiles/vim_conf/vimrc -rf
+    cp $curr_path/tmux.conf        $dotfiles/tmux_conf/tmux.conf -rf
+    cp $curr_path/zshrc            $dotfiles/zsh_conf/zshrc -rf
+    cp $curr_path/user_default.sh  $dotfiles/zsh_conf/user_default.sh -rf
 }
 
 # 安装 zsh 配置
