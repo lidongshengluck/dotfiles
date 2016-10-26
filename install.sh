@@ -13,7 +13,7 @@ dotfiles=$HOME/.dotfiles
 [ -z "$AUTO_JUMP" ] && AUTO_JUMP='git://github.com/joelthelion/autojump.git'
 
 # zsh 自动补全
-[ -z "$ZSH_AUTO" ] && ZSH_AUTO='git://github.com/joelthelion/autojump.git'
+[ -z "$ZSH_AUTO" ] && ZSH_AUTO='https://github.com/zsh-users/zsh-autosuggestions.git'
 
 # 显示一条消息
 msg() {
