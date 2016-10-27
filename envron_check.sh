@@ -16,5 +16,12 @@ if [ -z `command -v tmux` ]; then
     exit
 fi
 
+if [ -z `command -v cscope` ]; then
+    success "cscope 不存在，请用 yum install cscope"
+fi
+
+if [ -z `command -v ag` ]; then
+    success "ag 不存在，请用 yum install epel-release.noarch the_silver_searcher"
+fi
 success "环境检查完成"
 
