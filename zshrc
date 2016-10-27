@@ -87,7 +87,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source $HOME/.zsh_defined.sh
+source $HOME/.dotfiles/zsh_conf/zsh_defined.sh
 
 # load autosuggestions
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
