@@ -66,8 +66,8 @@ mcd() {
 # 查看自己常用的命令
 used() {
     if [ $1 ]; then
-        history | awk '{print $2}' | sort | uniq -c | head -n $1
+        history | awk '{print $2}' | sort | uniq -c | sort -nr | head -n $1
     else
-        history | awk '{print $2}' | sort | uniq -c | head -n 10
+        history | awk '{print $2}' | sort | uniq -c | sort -nr | head -n 10
     fi
 }
