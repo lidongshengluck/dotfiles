@@ -23,5 +23,9 @@ fi
 if [ -z `command -v ag` ]; then
     success "ag 不存在，请用 yum install epel-release.noarch the_silver_searcher"
 fi
+
+if [ -z `command -v vim` ]; then
+    success "vim 不存在，请用 yum install vim"
+fi
 success "环境检查完成"
 
