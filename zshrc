@@ -87,23 +87,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias cls='clear'
-alias ll='ls -l'
-alias la='ls -a'
-alias vi='vim'
-alias phpdbg='/usr/local/php5/bin/phpdbg'
-alias grep="grep --color=auto"
-alias -s php=vi
-alias -s js=vi
-alias -s css=vi
-alias -s c=vi
-alias -s txt=vi
-alias -s tgz='tar -xzvf'
-alias -s zip='unzip'
-alias -s bz2='tar -xjvf'
+source $HOME/.zsh_defined.sh
 
 # load autosuggestions
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-source $HOME/.user_default.sh
 
