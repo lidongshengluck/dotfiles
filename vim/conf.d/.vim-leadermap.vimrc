@@ -21,8 +21,9 @@ nnoremap <leader>u viwU
 " edit模式下，转换单词为大写
 inoremap <leader>u <esc>hviwUwi
 
-" edit模式下，快速保存文件
-inoremap <leader>w <esc>:w<cr>a
+" 快速关闭窗口, 和之前的录制宏调换
+nnoremap q :q<cr>
+nnoremap <leader>q q
 
 " 打开配置文件
 nnoremap <leader>ev :split ~/.vimrc<CR>
@@ -30,6 +31,5 @@ nnoremap <leader>ev :split ~/.vimrc<CR>
 " 打开帮助文件
 nnoremap <leader>eh :split ~/.vim/mydoc/index/doc/README.md<CR>
 
-" 目录导航
+" 代码导航
 nnoremap <leader>n :NERDTreeToggle<CR>
-

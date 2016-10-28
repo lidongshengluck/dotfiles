@@ -92,4 +92,5 @@ source $HOME/.dotfiles/zsh_conf/zsh_defined.sh
 # load autosuggestions
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# 默认进入终端模式
 
