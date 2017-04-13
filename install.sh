@@ -7,10 +7,10 @@ dotfiles=$HOME/.dotfiles
 [ -z "$VUNDLE_URI" ] && VUNDLE_URI="https://github.com/VundleVim/Vundle.vim.git"
 
 # oh_my_zsh zsh的增强配置
-[ -z "$OH_MY_ZSH" ] && OH_MY_ZSH='git://github.com/robbyrussell/oh-my-zsh.git'
+[ -z "$OH_MY_ZSH" ] && OH_MY_ZSH='https://github.com/robbyrussell/oh-my-zsh.git'
 
 # zsh 的自动跳转插件
-[ -z "$AUTO_JUMP" ] && AUTO_JUMP='git://github.com/joelthelion/autojump.git'
+[ -z "$AUTO_JUMP" ] && AUTO_JUMP='https://github.com/joelthelion/autojump.git'
 
 # zsh 自动补全
 [ -z "$ZSH_AUTO" ] && ZSH_AUTO='https://github.com/zsh-users/zsh-autosuggestions.git'
@@ -130,7 +130,7 @@ copy_files
 install_zsh
 
 # 安装 autojump 插件
-# ./install_autojump.sh
+./install_autojump.sh
 
 # 创建链接
 create_symlinks "$dotfiles" \
