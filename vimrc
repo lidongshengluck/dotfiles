@@ -6,6 +6,7 @@ set ar
 set autoindent
 set incsearch
 set backspace=indent,eol,start
+set mouse=a
 "set ruler
 "set cursorline
 
@@ -72,23 +73,18 @@ source ~/.vim/conf.d/.vim-status.vimrc
 " 插件设置
 source ~/.vim/conf.d/.vim-vundle.vimrc
 source ~/.vim/conf.d/.vim-tabularize.vimrc
-"source ~/.vim/conf.d/.vim-solarized.vimrc
+source ~/.vim/conf.d/.vim-solarized.vimrc
 source ~/.vim/conf.d/.vim-neosnippet.vimrc
 source ~/.vim/conf.d/.vim-tagbar.vimrc
-source ~/.vim/conf.d/.vim-ctrlp.vimrc
-source ~/.vim/conf.d/.vim-expand-region.vimrc
-source ~/.vim/conf.d/.vim-syntastic.vimrc
+"source ~/.vim/conf.d/.vim-syntastic.vimrc
 source ~/.vim/conf.d/.vim-easymotion.vimrc
 source ~/.vim/conf.d/.vim-neocomplete.vimrc
-source ~/.vim/conf.d/.vim-leadermap.vimrc
+
 source ~/.vim/conf.d/.vim-cscope.vimrc
-source ~/.vim/conf.d/.vim-mutliple-cursors.vimrc
-source ~/.vim/conf.d/.vim-shell.vimrc
-source ~/.vim/conf.d/.vim-ag.vimrc
+"source ~/.vim/conf.d/.vim-shell.vimrc
+"source ~/.vim/conf.d/.vim-ag.vimrc
 
-let g:phpcomplete_index_composer_command="composer"
-
-" source ~/.vim/conf.d/.vim-ack.vimrc
-" source ~/.vim/conf.d/.vim-taglist.vimrc
 " source ~/.vim/conf.d/.vim-vcscommand.vimrc
+source ~/.vim/conf.d/.vim-unite.vimrc
+source ~/.vim/conf.d/.vim-leadermap.vimrc
 

@@ -11,23 +11,22 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-surround'
 
 " 快速查找项目文件
-Plugin 'kien/ctrlp.vim'
+"Plugin 'kien/ctrlp.vim'
+Bundle "shougo/unite.vim"
 
 " 项目导航
 Plugin 'scrooloose/nerdtree'
 
 " 缓冲区导航插件 
-Plugin 'thisivan/vim-bufexplorer'
+"Plugin 'thisivan/vim-bufexplorer'
 
 " 注释插件
 Plugin 'scrooloose/nerdcommenter'
 
 " 代码补全
 Bundle 'Shougo/vimproc'
-"Plugin 'Shougo/neocomplete'
-
-" 代码补全增强
-Plugin 'ervandew/supertab'
+Plugin 'Shougo/neocomplete'
+Plugin 'skywind3000/asyncrun.vim'
 
 " 代码段
 Plugin 'Shougo/neosnippet'
@@ -55,29 +54,17 @@ Bundle 'tpope/vim-repeat'
 " 批量修改文本对象
 Bundle 'terryma/vim-multiple-cursors'
 
-" vim会话管理
-Bundle 'vim-scripts/sessionman.vim'
 
 " 快速选择文本对象
-Bundle 'terryma/vim-expand-region'
+"Bundle 'terryma/vim-expand-region'
 
 " 语法检查
-Bundle 'scrooloose/syntastic'
+"Bundle 'scrooloose/syntastic'
 
 " 书签
-Bundle 'kshenoy/vim-signature'
+"Bundle 'kshenoy/vim-signature'
 
-" 项目搜索
-"Bundle 'mileszs/ack.vim'
-
-" 自动更新tag
-"Bundle 'brookhong/cscope.vim'
-
-Bundle 'Shougo/vimshell.vim'
-
-Bundle 'rking/ag.vim'
 " Plugin 'vim-scripts/vcscommand.vim'
-" Plugin 'mileszs/ack.vim'
 " Plugin 'erikfercak/php-search-doc'
 " Plugin 'stephpy/vim-php-cs-fixer'
 " Plugin 'plasticboy/vim-markdown'

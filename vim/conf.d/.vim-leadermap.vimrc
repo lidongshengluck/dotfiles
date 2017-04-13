@@ -1,15 +1,13 @@
 " 行首尾移动键定义 ---------------------{{{
-nnoremap <leader>h ^
-nnoremap <leader>g g_
 vnoremap <leader>h ^
 vnoremap <leader>g g_
 " end -----------}}}
 
 " 多窗口编辑模式下，窗口快速跳转 -------------------{{{
-nnoremap <leader>wj <C-W>j
-nnoremap <leader>wk <C-W>k
-nnoremap <leader>wh <C-W>h
-nnoremap <leader>wl <C-W>l
+nnoremap <leader>j <C-W>j
+nnoremap <leader>k <C-W>k
+nnoremap <leader>h <C-W>h
+nnoremap <leader>l <C-W>l
 " end -----------}}}
 
 " 插入模式下，进入normal模式
@@ -33,3 +31,9 @@ nnoremap <leader>eh :split ~/.vim/mydoc/index/doc/README.md<CR>
 
 " 代码导航
 nnoremap <leader>n :NERDTreeToggle<CR>
+
+" 调用 ag 查看搜索字符 
+nnoremap <leader>ag :AsyncRun ag -i <cword> ./ <cr> :copen <cr>
+
+" 调用异步运行程序 
+nnoremap <leader>r :copen<cr>:AsyncRun  

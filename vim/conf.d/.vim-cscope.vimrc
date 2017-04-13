@@ -14,30 +14,37 @@ if !exists('g:cwn')
     let g:cwn = 0
 endif
 
-function! SetCwIdx()
-    if g:cwn > 0 
-        :ccl
-        let g:cwn = 0
-    else
-        :cw
-        let g:cwn = winnr()
-    endif
-endfunction
-
 "" s: Find this C symbol
-nnoremap  <leader>fs :cs f c ('<cword>')<CR>:call SetCwIdx()<CR>
+nnoremap  <leader>fs :cs f c ('<cword>')<CR>:cw<CR>
 "" g: Find this definition
-nnoremap  <leader>fg :cs f g <cword><CR>:call SetCwIdx()<CR>
+nnoremap  <leader>fg :cs f g <cword><CR>:cw<CR>
 "" d: Find functions called by this function
-nnoremap  <leader>fd :cs f d <cword><CR>:call SetCwIdx()<CR>
+nnoremap  <leader>fd :cs f d <cword><CR>:cw<CR>
 "" c: Find functions calling this function
-nnoremap  <leader>fc :cs f c <cword><CR>:call SetCwIdx()<CR>
+nnoremap  <leader>fc :cs f c <cword><CR>:cw<CR>
 "" t: Find this text string
-nnoremap  <leader>ft :cs f t <cword><CR>:call SetCwIdx()<CR>
+nnoremap  <leader>ft :cs f t <cword><CR>:cw<CR>
 "" e: Find this egrep pattern
-nnoremap  <leader>fe :cs e e <cword><CR>:call SetCwIdx()<CR>
+nnoremap  <leader>fe :cs e e <cword><CR>:cw<CR>
 "" f: Find this file
-nnoremap  <leader>ff :cs f f <cword><CR>:call SetCwIdx()<CR>
+nnoremap  <leader>ff :cs f f <cword><CR>:cw<CR>
 "" i: Find files #including this file
 
-nnoremap <leader>l :call SetCwIdx()<CR>
+function! g:CscopeDone()
+	exec "cs add ".fnameescape(g:asyncrun_text)
+endfunc
+
+function! g:CscopeUpdate(workdir, cscopeout)
+	let l:cscopeout = fnamemodify(a:cscopeout, ":p")
+	let l:cscopeout = fnameescape(l:cscopeout)
+	let l:workdir = (a:workdir == '')? '.' : a:workdir
+	try | exec "cs kill ".l:cscopeout | catch | endtry
+	exec "AsyncRun -post=call\\ g:CscopeDone() ".
+				\ "-text=".l:cscopeout." "
+				\ "-cwd=".fnameescape(l:workdir)." ".
+				\ "cscope -b -R -f ".l:cscopeout
+endfunc
+
+noremap <c-r> :call g:CscopeUpdate(".", "cscope.out")<cr>
+
+
