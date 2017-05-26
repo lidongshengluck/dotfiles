@@ -1,6 +1,6 @@
 #!/bin/sh
 
-session_name="develop"
+session_name="`users`"
 
 session_exists() {
     tmux has-session  -t "$1" 2>/dev/null
@@ -8,6 +8,7 @@ session_exists() {
 
 new_session() {
     tmux new -d -s "$1"
+    attach_session "$1"
 }
 
 attach_session() {
