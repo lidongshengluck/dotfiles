@@ -52,6 +52,7 @@ copy_files() {
     cp $curr_path/vim              $dotfiles/vim_conf/vim -rf
     cp $curr_path/vimrc            $dotfiles/vim_conf/vimrc -rf
     cp $curr_path/tmux.conf        $dotfiles/tmux_conf/tmux.conf -rf
+    cp $curr_path/tmuxcolors-dark.conf $dotfiles/tmux_conf/tmuxcolors-dark.conf -rf
     cp $curr_path/zshrc            $dotfiles/zsh_conf/zshrc -rf
     cp $curr_path/start.sh         $dotfiles/zsh_conf/start.sh -rf
     cp $curr_path/zsh_defined.sh   $dotfiles/zsh_conf/zsh_defined.sh -rf
@@ -82,6 +83,7 @@ create_symlinks() {
     ln -s "$source_path/zsh_conf/zshrc"           "$target_path/.zshrc"
     ln -s "$source_path/zsh_conf/start.sh"        "$target_path/start.sh"
     ln -s "$source_path/tmux_conf/tmux.conf"      "$target_path/.tmux.conf"
+    ln -s "$source_path/tmux_conf/tmuxcolors-dark.conf" "$target_path/.tmuxcolors-dark.conf"
 
     success "创建链接成功"
 }
