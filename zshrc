@@ -62,6 +62,9 @@ source $ZSH/oh-my-zsh.sh
 
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
 
+# 默认进入tmux, 名称为 develop
+source ~/start.sh
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
